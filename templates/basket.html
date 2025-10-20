@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Crochet Handwoven Basket</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='basket.css') }}">
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    CROCHET HANDWOVEN BASKET
+  </div>
+
+  <div class="container">
+    <h2>Handwoven Basket Collection</h2>
+    <form action="addtocart8.html">
+
+      <div class="item">
+        <input type="checkbox" id="basket1" />
+        <label for="basket1">
+          <img src="../static/images/round.jpg" alt="Round Basket"> Round Basket
+        </label>
+        <div>Price: ₱250.00</div>
+        <div>Quantity: <input type="number" value="1" min="1" /></div>
+      </div>
+
+      <div class="item">
+        <input type="checkbox" id="basket2" />
+        <label for="basket2">
+          <img src="../static/images/oval.jpg" alt="Oval Basket"> Oval Basket
+        </label>
+        <div>Price: ₱300.00</div>
+        <div>Quantity: <input type="number" value="1" min="1" /></div>
+      </div>
+
+      <div class="item">
+        <input type="checkbox" id="basket3" />
+        <label for="basket3">
+          <img src="../static/images/mini.jpg" alt="Mini Basket"> Mini Basket
+        </label>
+        <div>Price: ₱150.00</div>
+        <div>Quantity: <input type="number" value="1" min="1" /></div>
+      </div>
+
+      <div class="item">
+        <input type="checkbox" id="basket4" />
+        <label for="basket4">
+          <img src="../static/images/storage.jpg" alt="Storage Basket"> Storage Basket
+        </label>
+        <div>Price: ₱350.00</div>
+        <div>Quantity: <input type="number" value="1" min="1" /></div>
+      </div>
+
+      <div class="item">
+        <input type="checkbox" id="basket5" />
+        <label for="basket5">
+          <img src="../static/images/handled.jpg" alt="Handled Basket"> Handled Basket
+        </label>
+        <div>Price: ₱400.00</div>
+        <div>Quantity: <input type="number" value="1" min="1" /></div>
+      </div>
+
+      <button type="submit" class="add-button">Add to Cart</button>
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <div class="bottom-header">
+    <p> © 2025 by: Angel Sabellano | Purely Handmade Crochet | Supporting Artisans, One Creation at a Time.</p>
+  </div>
+
+</body>
+</html>

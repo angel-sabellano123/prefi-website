@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Home Decor Collection</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='homedecor.css') }}">
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    HANDMADE HOME DECOR
+  </div>
+
+  <div class="container">
+    <h2>Home Decor</h2>
+    <form action="addtocart3.html">
+
+      <div class="item">
+        <input type="checkbox" id="dec1" />
+        <label for="dec1">
+          <img src="../static/images/pillowcover.jpg" alt="Pillow Covers"> Pillow Covers
+        </label>
+        <div>Price: ₱200.00</div>
+        <div>Quantity: <input type="number" value="1" min="1" /></div>
+      </div>
+
+      <div class="item">
+        <input type="checkbox" id="dec2" />
+        <label for="dec2">
+          <img src="../static/images/organizer.jpg" alt="Couch Arm Rest Organizer"> Couch Arm Rest Organizer
+        </label>
+        <div>Price: ₱300.00</div>
+        <div>Quantity: <input type="number" value="1" min="1" /></div>
+      </div>
+
+      <div class="item">
+        <input type="checkbox" id="dec3" />
+        <label for="dec3">
+          <img src="../static/images/tvcover.jpg" alt="TV Cover"> TV Cover
+        </label>
+        <div>Price: ₱250.00</div>
+        <div>Quantity: <input type="number" value="1" min="1" /></div>
+      </div>
+
+      <div class="item">
+        <input type="checkbox" id="dec4" />
+        <label for="dec4">
+          <img src="../static/images/wallhanging.jpg" alt="Wall Hanging Decor"> Wall Hanging Decor
+        </label>
+        <div>Price: ₱350.00</div>
+        <div>Quantity: <input type="number" value="1" min="1" /></div>
+      </div>
+
+      <div class="item">
+        <input type="checkbox" id="dec5" />
+        <label for="dec5">
+          <img src="../static/images/rug.jpg" alt="Crochet Rug"> Crochet Rug
+        </label>
+        <div>Price: ₱300.00</div>
+        <div>Quantity: <input type="number" value="1" min="1" /></div>
+      </div>
+
+      <div class="item">
+        <input type="checkbox" id="dec6" />
+        <label for="dec6">
+          <img src="../static/images/tiebacks.jpg" alt="Curtain Tiebacks"> Curtain Tiebacks
+        </label>
+        <div>Price: ₱400.00</div>
+        <div>Quantity: <input type="number" value="1" min="1" /></div>
+      </div>
+
+      <button type="submit" class="add-button">Add to Cart</button>
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <div class="bottom-header">
+    <p> © 2025 by: Angel Sabellano | Purely Handmade Crochet | Supporting Artisans, One Creation at a Time.</p>
+  </div>
+
+</body>
+</html>

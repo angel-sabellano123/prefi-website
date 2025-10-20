@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Crochet Materials</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='materials.css') }}">
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    HANDMADE CROCHET
+  </div>
+
+  <!-- Main Content -->
+  <div class="container">
+    <h2>Crochet Materials</h2>
+    <form action="addtocart1.html">
+
+      <div class="item">
+        <input type="checkbox" id="item1" />
+        <label for="item1">
+          <img src="../static/images/yarn.jpg" alt="Yarn"> Yarn
+        </label>
+        <div>Price: ₱20.00</div>
+        <div>Quantity: <input type="number" value="1" min="1" /></div>
+      </div>
+
+      <div class="item">
+        <input type="checkbox" id="item2" />
+        <label for="item2">
+          <img src="../static/images/hooks.jpg" alt="Crochet Hooks"> Crochet Hooks
+        </label>
+        <div>Price: ₱50.00</div>
+        <div>Quantity: <input type="number" value="1" min="1" /></div>
+      </div>
+
+      <div class="item">
+        <input type="checkbox" id="item3" />
+        <label for="item3">
+          <img src="../static/images/scissors.jpg" alt="Scissors"> Scissors
+        </label>
+        <div>Price: ₱25.00</div>
+        <div>Quantity: <input type="number" value="1" min="1" /></div>
+      </div>
+
+      <div class="item">
+        <input type="checkbox" id="item4" />
+        <label for="item4">
+          <img src="../static/images/stitch.jpg" alt="Stitch Markers"> Stitch Markers
+        </label>
+        <div>Price: ₱70.00</div>
+        <div>Quantity: <input type="number" value="1" min="1" /></div>
+      </div>
+
+      <button type="submit" class="add-button">Add to Cart</button>
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <div class="bottom-header">
+    <p>© 2025 by: Angel Sabellano | Purely Handmade Crochet | Supporting Artisans, One Creation at a Time.</p>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Purely Handmade Register</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='register.css') }}">
+</head>
+<body>
+
+  <div class="header">
+    PURELY HANDMADE REGISTER
+  </div>
+
+
+  <div class="container">
+    <h2>Create an Account</h2>
+    <form action="/login" method="get">
+      <input type="text" placeholder="Full Name" required>
+      <input type="email" placeholder="Email Address" required>
+      <input type="text" placeholder="Home Address" required>
+      <input type="number" placeholder="Contact Number" required>
+      <input type="password" placeholder="Password" required>
+      <input type="password" placeholder="Confirm Password" required>
+      <button type="submit" class="register-button">Register</button>
+    </form>
+
+    <div class="login-text">
+      Already have an account? <a href="/login">Log in here</a>
+    </div>
+  </div>
+
+
+  <div class="bottom-header">
+    © 2025 by: Angel Sabellano | Purely Handmade Crochet | Supporting Artisans, One Creation at a Time.
+  </div>
+</body>
+</html>

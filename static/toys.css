@@ -1,0 +1,82 @@
+body {
+  background-color: white;
+  text-align: center;
+  padding: 20px;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Header */
+.header {
+  background-color: brown;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Container */
+.container {
+  background-color: white;
+  padding: 20px;
+  display: inline-block;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  text-align: left;
+}
+
+h2 {
+  text-align: center;
+  color: brown;
+}
+
+/* Items */
+.item {
+  margin-bottom: 15px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.item label img {
+  width: 60px;
+  height: 60px;
+  margin-right: 10px;
+  vertical-align: middle;
+  border-radius: 5px;
+}
+
+.item div {
+  margin-left: 30px;
+  margin-top: 5px;
+}
+
+/* Add to Cart Button */
+.add-button {
+  background-color: white;
+  color: #8B4513;
+  padding: 12px 24px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 2px solid brown;
+  display: block;
+  margin: 20px auto 0;
+}
+
+.add-button:hover {
+  background-color: brown;
+  color: white;
+  transition: 0.3s;
+}
+
+/* Footer */
+.bottom-header {
+  background-color: brown;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 16px;
+  font-weight: bold;
+  width: 100%;
+}

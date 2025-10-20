@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Crochet Knitted Scarves</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='scarf.css') }}">
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    CROCHET KNITTED SCARVES
+  </div>
+
+  <div class="container">
+    <h2>Scarves Collection</h2>
+    <form action="addtocart6.html">
+
+      <div class="item">
+        <input type="checkbox" id="scarf1" />
+        <label for="scarf1">
+          <img src="../static/images/singles.jpg" alt="Single Crochet Scarf"> Single Crochet Scarf
+        </label>
+        <div>Price: ₱250.00</div>
+        <div>Quantity: <input type="number" value="1" min="1" /></div>
+      </div>
+
+      <div class="item">
+        <input type="checkbox" id="scarf2" />
+        <label for="scarf2">
+          <img src="../static/images/doubles.jpg" alt="Double Crochet Scarf"> Double Crochet Scarf
+        </label>
+        <div>Price: ₱300.00</div>
+        <div>Quantity: <input type="number" value="1" min="1" /></div>
+      </div>
+
+      <div class="item">
+        <input type="checkbox" id="scarf3" />
+        <label for="scarf3">
+          <img src="../static/images/halfs.jpg" alt="Half Double Crochet Scarf"> Half Double Crochet Scarf
+        </label>
+        <div>Price: ₱280.00</div>
+        <div>Quantity: <input type="number" value="1" min="1" /></div>
+      </div>
+
+      <div class="item">
+        <input type="checkbox" id="scarf4" />
+        <label for="scarf4">
+          <img src="../static/images/trebles.jpg" alt="Treble Crochet Scarf"> Treble Crochet Scarf
+        </label>
+        <div>Price: ₱320.00</div>
+        <div>Quantity: <input type="number" value="1" min="1" /></div>
+      </div>
+
+      <div class="item">
+        <input type="checkbox" id="scarf5" />
+        <label for="scarf5">
+          <img src="../static/images/grannys.jpg" alt="Granny Stitch Scarf"> Granny Stitch Scarf
+        </label>
+        <div>Price: ₱350.00</div>
+        <div>Quantity: <input type="number" value="1" min="1" /></div>
+      </div>
+
+      <button type="submit" class="add-button">Add to Cart</button>
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <div class="bottom-header">
+    <p> © 2025 by: Angel Sabellano | Purely Handmade Crochet | Supporting Artisans, One Creation at a Time.</p>
+  </div>
+
+</body>
+</html>

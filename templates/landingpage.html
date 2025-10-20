@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purely Handmade - Landing Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='landingpage.css') }}">
+</head>
+<body>
+
+    <div class="welcome-message">
+        Welcome to Purely Handmade Crochet!
+    </div>
+
+    <header class="header">
+        <div class="logo">PURELY HANDMADE</div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search handcrafted products...">
+            <a href="/about" class="btn">About Us</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Discover the Beauty of Handmade</h1>
+        <p>Support artisans and find unique handcrafted products made with love.</p>
+        <a href="/home" class="btn">Start Shopping</a>
+    </section>
+
+    <section class="categories">
+        <h2>Shop by Category</h2>
+        <div class="category-list">
+
+            <div class="category-item">
+                <a href="{{ url_for('materials') }}">
+                    <img src="../static/images/mat.jpg" alt="Crochet Materials">
+                    <span>Crochet Materials</span>
+                </a>
+            </div>
+
+            <div class="category-item">
+                <a href="{{ url_for('flowers') }}">
+                    <img src="../static/images/flowers.jpg" alt="Flowers">
+                    <span>Flowers</span>
+                </a>
+            </div>
+
+            <div class="category-item">
+                <a href="{{ url_for('homedecor') }}">
+                    <img src="../static/images/home.jpg" alt="Home Decor">
+                    <span>Home Decor</span>
+                </a>
+            </div>
+
+            <div class="category-item">
+                <a href="{{ url_for('toys') }}">
+                    <img src="../static/images/toys.jpg" alt="Toys">
+                    <span>Toys</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="product-grid">
+        <div class="product-item">
+            <a href="{{ url_for('blanket') }}">
+                <img src="../static/images/blanket.jpg" alt="Handmade Crochet Blanket">
+                <span>Handmade Crochet Blanket</span>
+            </a>
+        </div>
+
+        <div class="product-item">
+            <a href="{{ url_for('scarf') }}">
+                <img src="../static/images/scarf.jpg" alt="Knitted Scarf">
+                <span>Knitted Scarf</span>
+            </a>
+        </div>
+
+        <div class="product-item">
+            <a href="{{ url_for('booties') }}">
+                <img src="../static/images/booties.jpg" alt="Crochet Baby Booties">
+                <span>Crochet Baby Booties</span>
+            </a>
+        </div>
+
+        <div class="product-item">
+            <a href="{{ url_for('basket') }}">
+                <img src="../static/images/basket.jpg" alt="Handwoven Basket">
+                <span>Handwoven Basket</span>
+            </a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        © 2025 by: Angel Sabellano | Purely Handmade Crochet | Supporting Artisans, One Creation at a Time.
+    </footer>
+
+</body>
+</html>
