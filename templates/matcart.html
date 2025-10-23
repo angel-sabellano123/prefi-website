@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Cart</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='matcart.css') }}">
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <h1>Purely Handmade Crochet</h1>
+    <p>Supporting Artisans, One Creation at a Time</p>
+  </div>
+
+  <!-- Cart Content -->
+  <div class="container">
+    <h2>🧺 Your Shopping Cart</h2>
+
+    {% if items %}
+    <form action="{{ url_for('confirm_order') }}" method="POST">
+      <table>
+        <tr>
+          <th>Select</th>
+          <th>Item Name</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Subtotal</th>
+        </tr>
+        {% for item in items %}
+        <tr>
+          <td><input type="checkbox" name="item_{{ item['product_id'] }}_selected" value="1" checked></td>
+          <td>{{ item['product_name'] }}</td>
+          <td>₱{{ '%.2f'|format(item['price']) }}</td>
+          <td><input type="number" name="item_{{ item['product_id'] }}_qty" value="{{ item['quantity'] }}" min="1"></td>
+          <td>₱{{ '%.2f'|format(item['price'] * item['quantity']) }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+
+      <div class="total">
+        <strong>Total:</strong> ₱{{ '%.2f'|format(total) }}
+      </div>
+
+      <!-- Payment Method -->
+      <div class="payment-method">
+        <label for="payment">Payment Method:</label>
+        <select name="payment" id="payment" required>
+          <option value="">-- Select Payment Method --</option>
+          <option value="GCash">GCash</option>
+          <option value="PayPal">PayPal</option>
+          <option value="Cash On Delivery">Cash On Delivery</option>
+        </select>
+      </div>
+
+      <div class="buttons">
+        <button type="submit">Buy Now</button>
+      </div>
+    </form>
+
+    {% else %}
+      <p style="text-align:center;">Your cart is empty.</p>
+    {% endif %}
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>© 2025 by: Angel Sabellano | Purely Handmade Crochet</p>
+  </div>
+
+</body>
+</html>

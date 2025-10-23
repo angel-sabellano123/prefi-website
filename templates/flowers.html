@@ -6,61 +6,29 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='flowers.css') }}">
 </head>
 <body>
+  <div class="header">HANDMADE CROCHET</div>
 
-  <!-- Top Header -->
-  <div class="header">
-    HANDMADE CROCHET
-  </div>
-
-  <!-- Main Container -->
   <div class="container">
     <h2>Flowers</h2>
-    <form action="addtocart2.html">
 
+    <form action="{{ url_for('add_to_cart') }}" method="POST">
+      {% for p in products %}
       <div class="item">
-        <input type="checkbox" id="item1" />
-        <label for="item1">
-          <img src="../static/images/rose.jpg" alt="Rose"> Rose
+        <input type="checkbox" id="item{{p.id}}" name="item_{{p.id}}_selected" value="1" />
+        <label for="item{{p.id}}">
+          <img src="{{ p.image }}" alt="{{ p.name }}">
+          {{ p.name }}
         </label>
-        <div>Price: ₱40.00</div>
-        <div>Quantity: <input type="number" value="1" min="1" /></div>
+        <div>Price: ₱{{ '%.2f'|format(p.price) }}</div>
+        <div>Quantity: <input type="number" name="item_{{p.id}}_qty" value="1" min="1" /></div>
       </div>
-
-      <div class="item">
-        <input type="checkbox" id="item2" />
-        <label for="item2">
-          <img src="../static/images/lily.jpg" alt="Lily"> Lily
-        </label>
-        <div>Price: ₱30.00</div>
-        <div>Quantity: <input type="number" value="1" min="1" /></div>
-      </div>
-
-      <div class="item">
-        <input type="checkbox" id="item3" />
-        <label for="item3">
-          <img src="../static/images/sunflower.jpg" alt="Sunflower"> Sunflower
-        </label>
-        <div>Price: ₱35.00</div>
-        <div>Quantity: <input type="number" value="1" min="1" /></div>
-      </div>
-
-      <div class="item">
-        <input type="checkbox" id="item4" />
-        <label for="item4">
-         <img src="../static/images/orchid.jpg" alt="Orchid"> Orchid
-        </label>
-        <div>Price: ₱50.00</div>
-        <div>Quantity: <input type="number" value="1" min="1" /></div>
-      </div>
-
+      {% endfor %}
       <button type="submit" class="add-button">Add to Cart</button>
     </form>
   </div>
 
-  <!-- Bottom Header / Footer -->
   <div class="bottom-header">
-    <p> © 2025 by: Angel Sabellano | Purely Handmade Crochet | Supporting Artisans, One Creation at a Time.</p>
+    <p>© 2025 by: Angel Sabellano | Purely Handmade Crochet</p>
   </div>
-
 </body>
 </html>

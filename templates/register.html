@@ -7,29 +7,32 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='register.css') }}">
 </head>
 <body>
-
-  <div class="header">
-    PURELY HANDMADE REGISTER
-  </div>
-
+  <div class="header">PURELY HANDMADE REGISTER</div>
 
   <div class="container">
     <h2>Create an Account</h2>
-    <form action="/login" method="get">
-      <input type="text" placeholder="Full Name" required>
-      <input type="email" placeholder="Email Address" required>
-      <input type="text" placeholder="Home Address" required>
-      <input type="number" placeholder="Contact Number" required>
-      <input type="password" placeholder="Password" required>
-      <input type="password" placeholder="Confirm Password" required>
+    <form action="/register" method="POST">
+      <input type="text" name="fullname" placeholder="Full Name" required>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <input type="text" name="address" placeholder="Home Address" required>
+      <input type="number" name="contact" placeholder="Contact Number" required>
+      <input type="password" name="password" placeholder="Password" required>
+      <input type="password" name="confirm" placeholder="Confirm Password" required>
       <button type="submit" class="register-button">Register</button>
     </form>
 
     <div class="login-text">
       Already have an account? <a href="/login">Log in here</a>
     </div>
-  </div>
 
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <p style="color: green;">{{ message }}</p>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+  </div>
 
   <div class="bottom-header">
     © 2025 by: Angel Sabellano | Purely Handmade Crochet | Supporting Artisans, One Creation at a Time.

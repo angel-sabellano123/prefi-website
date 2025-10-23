@@ -1,0 +1,75 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: beige;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header */
+.header {
+  background-color: brown;
+  color: white;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  padding: 15px 0;
+}
+
+/* Main Container */
+.container {
+  padding: 20px;
+}
+
+/* Table Styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  margin-top: 20px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background-color: brown;
+}
+
+/* Total and Buttons */
+.total {
+  text-align: right;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.buttons {
+  text-align: right;
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: brown;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: khahi;
+}
+
+/* Footer */
+.footer {
+  background-color: brown;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+  margin-top: 30px;
+}

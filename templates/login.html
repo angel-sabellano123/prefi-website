@@ -6,27 +6,29 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
 </head>
 <body>
+  <div class="header">PURELY HANDMADE LOGIN</div>
 
-  <!-- Header -->
-  <div class="header">
-    PURELY HANDMADE LOGIN
-  </div>
-
-  <!-- Login Form -->
   <div class="container">
     <h2>Welcome Back!</h2>
-    <form action="landingpage.html" method="get">
-      <input type="number" placeholder="Enter your number" required>
-      <input type="password" placeholder="Enter your password" required>
+    <form action="/login" method="POST">
+      <input type="number" name="contact" placeholder="Enter your number" required>
+      <input type="password" name="password" placeholder="Enter your password" required>
       <button type="submit" class="login-button">Log In</button>
     </form>
-    <p class="signup-text">Don’t have an account? <a href="register.html">Sign up here</a></p>
+
+    <p class="signup-text">Don’t have an account? <a href="/register">Sign up here</a></p>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <p style="color: red;">{{ message }}</p>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
   </div>
 
-  <!-- Footer -->
   <div class="bottom-header">
-    <p> © 2025 by: Angel Sabellano | Purely Handmade Crochet | Supporting Artisans, One Creation at a Time.</p>
+    <p>© 2025 by: Angel Sabellano | Purely Handmade Crochet | Supporting Artisans, One Creation at a Time.</p>
   </div>
-
 </body>
 </html>

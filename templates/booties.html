@@ -6,60 +6,29 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='booties.css') }}">
 </head>
 <body>
-
-  <!-- Header -->
-  <div class="header">
-    CROCHET BABY BOOTIES
-  </div>
+  <div class="header">CROCHET BABY BOOTIES</div>
 
   <div class="container">
     <h2>Baby Booties Collection</h2>
-    <form action="addtocart7.html">
 
+    <form action="{{ url_for('add_to_cart') }}" method="POST">
+      {% for p in products %}
       <div class="item">
-        <input type="checkbox" id="bootie1" />
-        <label for="bootie1">
-          <img src="../static/images/baby.jpg" alt="Baby Booties"> Baby Booties
+        <input type="checkbox" id="item{{p.id}}" name="item_{{p.id}}_selected" value="1" />
+        <label for="item{{p.id}}">
+          <img src="{{ p.image }}" alt="{{ p.name }}">
+          {{ p.name }}
         </label>
-        <div>Price: ₱150.00</div>
-        <div>Quantity: <input type="number" value="1" min="1" /></div>
+        <div>Price: ₱{{ '%.2f'|format(p.price) }}</div>
+        <div>Quantity: <input type="number" name="item_{{p.id}}_qty" value="1" min="1" /></div>
       </div>
-
-      <div class="item">
-        <input type="checkbox" id="bootie2" />
-        <label for="bootie2">
-          <img src="../static/images/animal.jpg" alt="Animal Crochet Booties"> Animal Crochet Booties
-        </label>
-        <div>Price: ₱180.00</div>
-        <div>Quantity: <input type="number" value="1" min="1" /></div>
-      </div>
-
-      <div class="item">
-        <input type="checkbox" id="bootie3" />
-        <label for="bootie3">
-          <img src="../static/images/cowboy.jpg" alt="Cowboy Crochet Booties"> Cowboy Crochet Booties
-        </label>
-        <div>Price: ₱200.00</div>
-        <div>Quantity: <input type="number" value="1" min="1" /></div>
-      </div>
-
-      <div class="item">
-        <input type="checkbox" id="bootie4" />
-        <label for="bootie4">
-          <img src="../static/images/cowgirl.jpg" alt="Cowgirl Booties"> Cowgirl Booties
-        </label>
-        <div>Price: ₱200.00</div>
-        <div>Quantity: <input type="number" value="1" min="1" /></div>
-      </div>
-
+      {% endfor %}
       <button type="submit" class="add-button">Add to Cart</button>
     </form>
   </div>
 
-  <!-- Footer -->
   <div class="bottom-header">
-    <p> © 2025 by: Angel Sabellano | Purely Handmade Crochet | Supporting Artisans, One Creation at a Time.</p>
+    <p>© 2025 by: Angel Sabellano | Purely Handmade Crochet</p>
   </div>
-
 </body>
 </html>

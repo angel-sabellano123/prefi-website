@@ -15,43 +15,20 @@
   <!-- Main Content -->
   <div class="container">
     <h2>Crochet Materials</h2>
-    <form action="addtocart1.html">
 
-      <div class="item">
-        <input type="checkbox" id="item1" />
-        <label for="item1">
-          <img src="../static/images/yarn.jpg" alt="Yarn"> Yarn
-        </label>
-        <div>Price: ₱20.00</div>
-        <div>Quantity: <input type="number" value="1" min="1" /></div>
-      </div>
+    <form action="{{ url_for('add_to_cart') }}" method="POST">
 
+      {% for p in products %}
       <div class="item">
-        <input type="checkbox" id="item2" />
-        <label for="item2">
-          <img src="../static/images/hooks.jpg" alt="Crochet Hooks"> Crochet Hooks
+        <input type="checkbox" id="item{{p.id}}" name="item_{{p.id}}_selected" value="1" />
+        <label for="item{{p.id}}">
+          <img src="{{ p.image }}" alt="{{ p.name }}" style="width:80px; height:80px; object-fit:cover;">
+          {{ p.name }}
         </label>
-        <div>Price: ₱50.00</div>
-        <div>Quantity: <input type="number" value="1" min="1" /></div>
+        <div>Price: ₱{{ '%.2f'|format(p.price) }}</div>
+        <div>Quantity: <input type="number" name="item_{{p.id}}_qty" value="1" min="1" /></div>
       </div>
-
-      <div class="item">
-        <input type="checkbox" id="item3" />
-        <label for="item3">
-          <img src="../static/images/scissors.jpg" alt="Scissors"> Scissors
-        </label>
-        <div>Price: ₱25.00</div>
-        <div>Quantity: <input type="number" value="1" min="1" /></div>
-      </div>
-
-      <div class="item">
-        <input type="checkbox" id="item4" />
-        <label for="item4">
-          <img src="../static/images/stitch.jpg" alt="Stitch Markers"> Stitch Markers
-        </label>
-        <div>Price: ₱70.00</div>
-        <div>Quantity: <input type="number" value="1" min="1" /></div>
-      </div>
+      {% endfor %}
 
       <button type="submit" class="add-button">Add to Cart</button>
     </form>

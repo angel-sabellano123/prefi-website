@@ -6,69 +6,29 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='blanket.css') }}">
 </head>
 <body>
-
-  <!-- Header -->
-  <div class="header">
-    HANDMADE CROCHET BLANKETS
-  </div>
+  <div class="header">HANDMADE CROCHET BLANKETS</div>
 
   <div class="container">
     <h2>Crochet Blanket Collection</h2>
-    <form action="addtocart5.html">
 
+    <form action="{{ url_for('add_to_cart') }}" method="POST">
+      {% for p in products %}
       <div class="item">
-        <input type="checkbox" id="blanket1" />
-        <label for="blanket1">
-          <img src="../static/images/single.jpg" alt="Single Crochet Blanket"> Single Crochet Blanket
+        <input type="checkbox" id="item{{p.id}}" name="item_{{p.id}}_selected" value="1" />
+        <label for="item{{p.id}}">
+          <img src="{{ p.image }}" alt="{{ p.name }}">
+          {{ p.name }}
         </label>
-        <div>Price: ₱500.00</div>
-        <div>Quantity: <input type="number" value="1" min="1" /></div>
+        <div>Price: ₱{{ '%.2f'|format(p.price) }}</div>
+        <div>Quantity: <input type="number" name="item_{{p.id}}_qty" value="1" min="1" /></div>
       </div>
-
-      <div class="item">
-        <input type="checkbox" id="blanket2" />
-        <label for="blanket2">
-          <img src="../static/images/double.jpg" alt="Double Crochet Blanket"> Double Crochet Blanket
-        </label>
-        <div>Price: ₱600.00</div>
-        <div>Quantity: <input type="number" value="1" min="1" /></div>
-      </div>
-
-      <div class="item">
-        <input type="checkbox" id="blanket3" />
-        <label for="blanket3">
-          <img src="../static/images/half.jpg" alt="Half Double Crochet Blanket"> Half Double Crochet Blanket
-        </label>
-        <div>Price: ₱550.00</div>
-        <div>Quantity: <input type="number" value="1" min="1" /></div>
-      </div>
-
-      <div class="item">
-        <input type="checkbox" id="blanket4" />
-        <label for="blanket4">
-          <img src="../static/images/granny.jpg" alt="Granny Square Blanket"> Granny Square Blanket
-        </label>
-        <div>Price: ₱700.00</div>
-        <div>Quantity: <input type="number" value="1" min="1" /></div>
-      </div>
-
-      <div class="item">
-        <input type="checkbox" id="blanket5" />
-        <label for="blanket5">
-          <img src="../static/images/solid.jpg" alt="Solid Granny Square Blanket"> Solid Granny Square Blanket
-        </label>
-        <div>Price: ₱750.00</div>
-        <div>Quantity: <input type="number" value="1" min="1" /></div>
-      </div>
-
+      {% endfor %}
       <button type="submit" class="add-button">Add to Cart</button>
     </form>
   </div>
 
-  <!-- Footer -->
   <div class="bottom-header">
-    <p> © 2025 by: Angel Sabellano | Purely Handmade Crochet | Supporting Artisans, One Creation at a Time.</p>
+    <p>© 2025 by: Angel Sabellano | Purely Handmade Crochet</p>
   </div>
-
 </body>
 </html>

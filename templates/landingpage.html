@@ -12,24 +12,36 @@
         Welcome to Purely Handmade Crochet!
     </div>
 
+    <!-- HEADER -->
     <header class="header">
         <div class="logo">PURELY HANDMADE</div>
         <div class="search-bar">
             <input type="text" placeholder="Search handcrafted products...">
-            <a href="/about" class="btn">About Us</a>
+
+            <!-- ABOUT US BUTTON -->
+            <a href="/aboutus" class="btn">About Us</a>
+
+            <!-- CART BUTTON -->
+            <a href="{{ url_for('matcart') }}" class="btn cart-btn">🛒 Cart</a>
+
+              {% if session.get('user_id') %}
+            <a href="{{ url_for('logout') }}" class="btn logout-btn">Logout</a>
+        {% endif %}
+
         </div>
     </header>
 
+    <!-- HERO SECTION -->
     <section class="hero">
         <h1>Discover the Beauty of Handmade</h1>
         <p>Support artisans and find unique handcrafted products made with love.</p>
-        <a href="/home" class="btn">Start Shopping</a>
+        <a href="{{ url_for('materials') }}" class="btn">Start Shopping</a>
     </section>
 
+    <!-- CATEGORIES -->
     <section class="categories">
         <h2>Shop by Category</h2>
         <div class="category-list">
-
             <div class="category-item">
                 <a href="{{ url_for('materials') }}">
                     <img src="../static/images/mat.jpg" alt="Crochet Materials">
@@ -60,6 +72,7 @@
         </div>
     </section>
 
+    <!-- FEATURED PRODUCTS -->
     <section class="product-grid">
         <div class="product-item">
             <a href="{{ url_for('blanket') }}">
@@ -90,6 +103,7 @@
         </div>
     </section>
 
+    <!-- FOOTER -->
     <footer class="footer">
         © 2025 by: Angel Sabellano | Purely Handmade Crochet | Supporting Artisans, One Creation at a Time.
     </footer>

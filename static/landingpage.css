@@ -159,3 +159,30 @@ body {
     padding: 20px;
     font-size: 0.95em;
 }
+
+.cart-btn {
+    background-color: brown;
+    margin-left: 10px;
+    border-radius: 6px;
+    padding: 8px 14px;
+    color: white;
+    text-decoration: none;
+}
+
+.cart-btn:hover {
+    background-color: pink;
+}
+
+.logout-btn {
+    background-color: brown;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+.logout-btn:hover {
+    background-color: pink;
+}
+
